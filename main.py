@@ -16,19 +16,19 @@ def create_test_world(width: int = 30, height: int = 30) -> Map:
     world = Map(width, height)
 
     # Добавляем траву 🌿
-    for _ in range(10):
+    for _ in range(40):
         pos = (random.randint(0, width - 1), random.randint(0, height - 1))
         if world.is_empty(pos):
             world.add_entity(Grass(pos))
 
     # Добавляем травоядных 🐄
-    for _ in range(60):
+    for _ in range(50):
         pos = (random.randint(0, width - 1), random.randint(0, height - 1))
         if world.is_empty(pos):
             world.add_entity(Herbivore(pos))
 
     # Добавляем хищников 🦁
-    for _ in range(30):
+    for _ in range(25):
         pos = (random.randint(0, width - 1), random.randint(0, height - 1))
         if world.is_empty(pos):
             world.add_entity(Predator(pos))

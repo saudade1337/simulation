@@ -21,7 +21,7 @@ def bfs_path(world: Map, start: Pos, goal: Pos) -> Optional[List[Pos]]:
             return reconstruct_path(came_from, current)
 
         for neighbor in world.neighbors(current):
-            if neighbor not in came_from and world.is_empty(neighbor):
+            if neighbor not in came_from and (world.is_empty(neighbor) or neighbor == goal):
                 queue.append(neighbor)
                 came_from[neighbor] = current
 
